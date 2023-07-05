@@ -1,0 +1,334 @@
+.topheader{
+    margin-top:3%;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+
+.btn-group.row2{
+    margin: auto;
+}
+
+.top2header{
+    margin-top:0%;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+
+
+.topbody{
+    margin-top: 2%;
+    text-align: center;
+    width: auto;
+    height: auto;
+}
+
+
+body{
+    background-color: #433d3d;
+    border:#000000 10px solid;
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+.radial-gradient {
+background-repeat:no-repeat;
+background-size: 100% 100%;
+background-image: radial-gradient(farthest-corner at 40px 40px,
+      #000000 10%, #433d3d 80%,#3f3f3f 100%);
+}
+
+
+.radial-gradient2 {
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+    background-image: radial-gradient(farthest-corner at 40px 40px,
+          #171717 5%, #3c3a3a 88%,#575757 100%);
+    }
+    
+.flip-container {
+    background: transparent;
+    display: inline-block;
+  }
+  
+  .flip-this {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .flip-container:hover .flip-this {
+    transition: 0.9s;
+    transform: rotateY(360deg);
+  }
+
+button.button1{
+    width: auto;
+    height: auto;
+    
+}
+
+
+* {
+    box-sizing: border-box;
+  }
+  
+  img {
+    vertical-align: middle;
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
+    display: none;
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
+    cursor: pointer;
+  }
+  
+  /* Next & previous buttons */
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 40%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  
+  /* Position the "next button" to the right */
+  .next {
+    right: 30%;
+    border-radius: 3px 0 0 3px;
+  }
+  .prev {
+    left: 30%;
+    border-radius: 3px 0 0 3px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
+    text-align: center;
+    background-color: #222;
+    padding: 2px 16px;
+    color: white;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Six columns side by side */
+  .column {
+    width: auto;
+    text-align: center;
+  }
+  
+  /* Add a transparency effect for thumnbail images */
+  .demo {
+    opacity: 0.6;
+  }
+  
+  .active,
+  .demo:hover {
+    opacity: 1;
+  }
+
+
+
+
+  div.scroll-container {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+    padding: 10px;
+  }
+  
+  div.scroll-container img {
+    padding: 10px;
+  }
+
+/* FROM HERE ON TIMELINE CSS */
+
+
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  .container.container1 {
+    padding: 10px 40px;
+    position: relative;
+    background-color: black;
+    width: auto;
+    height:auto
+    
+  }
+  
+  /* The circles on the timeline */
+  .container.container1::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #FF9F55;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+
+ .left::after{
+    left:49%;
+ }
+  
+  /* Fix the circle for containers on the right side */
+  .right::after {
+    left: 49%;
+  }
+  
+  /* The actual content */
+  .content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+    color: #000000;
+    width: auto;
+    height:auto;
+  }
+  
+  @media screen and (max-width: 600px) {
+    /* Place the timelime to the left */
+    .timeline::after {
+    left: 31px;
+    }
+    
+    /* Full-width containers */
+    .container.container1{
+    width: auto;
+    height:auto;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+    
+  
+    /* Make sure all circles are at the same spot */
+    .left::after, .right::after {
+    left: 15px;
+    }
+    
+    /* Make all right containers behave like the left ones */
+    .right {
+    left: 0%;
+    }
+  }
+
+
+  #whatsapp-icon {
+    font-size: 20px; /* Adjust the desired size */
+  }
+  #envelope-icon {
+    font-size: 17px; /* Adjust the desired size */
+  }
+  #certificate-icon {
+    font-size: 20px; /* Adjust the desired size */
+  }
+
+  /* Modal CSS */
+
+  /* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  /* Modal Content */
+  .modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+  
+  /* The Close Button */
+  .close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }

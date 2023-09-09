@@ -16,7 +16,7 @@ def my_cv(request):
         address = personalData.address
         img = str(personalData.img)
         imgBasePath = os.path.basename(img)
-        value = "option1"
+        value = "option1"  # default button option
         languages = models.Languages.objects.all()
         profileDesc = models.Profile.objects.all()
         dict = {"data":{
@@ -39,12 +39,34 @@ def my_cv(request):
         dict["skillImg"] = skillImg()
         dict["Titles"] = Titles()
         dict["buttons"] = buttonTitles()
+        dict["portfolioSkills"] = portfolioSkills()
         if request.method == 'POST':
                 value = request.POST.get('button')
         dict["button"] = value
+
         return render(request,'my_cv/manucv.html',context = dict)
     except Exception as e:
           print(e)
+
+
+def portfolioSkills():
+        try:
+                skills = models.PortfolioSkills.objects.all()
+                new_dict = {}
+                for skill in skills:  
+                        skill_data = {}
+                        indeximg = 0 
+                        views = models.PortfolioImg.objects.filter(portfolioskill=skill).all()
+                        for view in views:
+                              img = str(view.img)
+                              imgBasePath = os.path.basename(img)
+                              skill_data[f"img{indeximg}"] = {"name":view.name,"img":imgBasePath}
+                              indeximg = indeximg+1   
+                        new_dict[skill] = skill_data
+                return new_dict
+        except Exception as e:
+                print(e)
+
 
 
 def buttonTitles():
@@ -53,7 +75,8 @@ def buttonTitles():
         new_dict = {"Profile":{"btn1":f"{titles[2]}","num":1},
                         "Skills":{"btn1":f"{titles[3]}","num":2},
                         "WorkExperience":{"btn1":f"{titles[4]}","num":3},
-                        "Education":{"btn1":f"{titles[5]}","num":4}
+                        "Education":{"btn1":f"{titles[5]}","num":4},
+                        "Portfolio":{"btn1":f"{titles[7]}","num":5}
                         }
         return new_dict
       except Exception as e:
@@ -68,7 +91,8 @@ def Titles():
                         "Skills":titles[3],
                         "WorkExperience":titles[4],
                         "Education":titles[5],
-                        "EducationCertificates":titles[6]}  
+                        "EducationCertificates":titles[6],
+                        "Portfolio":titles[7]}  
         return new_dict
       except Exception as e:
           print(e)

@@ -84,6 +84,10 @@ class otherValues(models.Model):
     name = models.CharField(max_length=100)
     img = models.ImageField(upload_to='my_cv/static/my_cv/img/profile')
 
+    def __str__(self):
+        return f"{self.name}"
+
+
 
 
 class cvTitles(models.Model):
@@ -94,7 +98,25 @@ class cvTitles(models.Model):
 
 
 
+class PortfolioSkills(models.Model):
+    description = models.CharField(max_length=100)
 
+    def __str__(self):
+        return f"{self.description}"
+    
+class PortfolioImg(models.Model):
+    name = models.CharField(max_length=100,null=True)
+    img = models.ImageField(upload_to='my_cv/static/my_cv/img/portfolio',null=True,blank=True)
+    portfolioskill = models.ForeignKey(PortfolioSkills,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f"{self.name} - {self.portfolioskill}"
+    
+
+
+
+
+    
 
 
 
